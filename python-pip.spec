@@ -3,7 +3,7 @@
 
 Name:           python-pip
 Version:        1.4.1
-Release:        20
+Release:        21
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
