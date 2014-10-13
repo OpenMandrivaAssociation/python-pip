@@ -3,7 +3,7 @@
 
 Name:           python-pip
 Version:        1.5.6
-Release:        1
+Release:        2
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
@@ -14,11 +14,11 @@ Source0:        http://pypi.python.org/packages/source/p/pip/pip-%{version}.tar.
 BuildArch:      noarch
  
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python2-distribute
+BuildRequires:  python2-setuptools
 BuildRequires:  pkgconfig(python3)
-BuildRequires:  python3-distribute
+BuildRequires:  python-setuptools
 
-Requires:       python3-distribute
+Requires:       python-setuptools
 Requires:       python-pkg-resources
 %rename python3-pip
 
@@ -31,7 +31,7 @@ easy_install_.
 Summary:        A tool for installing and managing Python3 packages
 Group:          Development/Python
 
-Requires:	python2-distribute
+Requires:	python2-setuptools
 
 %description -n python2-pip
 Pip is a replacement for `easy_install
