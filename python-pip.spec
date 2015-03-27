@@ -2,10 +2,10 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:        1.5.6
-Release:        3
+Version:        6.0.6
+Release:        1
 Group:          Development/Python
-Summary:        pip installs packages. Python packages. An easy_install replacement
+Summary:        Pip installs packages. Python packages. An easy_install replacement
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/pip
@@ -50,18 +50,18 @@ rm -rf %{pypi_name}.egg-info
 cp -a . %{py3dir}
 
 %build
-%{__python2} setup.py build
+python2} setup.py build
 pushd %{py3dir}
-%{__python3} setup.py build
+python3 setup.py build
 popd
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+python2} setup.py install -O1 --skip-build --root %{buildroot}
 
 # The install process creates both pip and pip-<python_abiversion> that seem to
 # be the same. Since removing pip-* also clobbers pip-python3, just remove pip-2*
 pushd %{buildroot}%{_bindir}
-%{__rm} -rf pip2*
+rm -rf pip2*
 
 # Change the name of the python2 pip executable in order to not conflict with
 # the python3 executable
@@ -70,12 +70,12 @@ mv %{buildroot}%{_bindir}/pip %{buildroot}%{_bindir}/python2-pip
 popd
 
 pushd %{py3dir}
-%{__python3} setup.py install --skip-build --root %{buildroot}
+python3 setup.py install --skip-build --root %{buildroot}
 
 # The install process creates both pip and pip-<python_abiversion> that seem to
 # be the same. Remove the extra script
 pushd %{buildroot}%{_bindir}
-%{__rm} -rf pip3*
+rm -rf pip3*
 
 popd
 
