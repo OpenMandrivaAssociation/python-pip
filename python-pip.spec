@@ -3,7 +3,7 @@
 
 Name:           python-pip
 Version:        1.5.6
-Release:        3
+Release:        4
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
