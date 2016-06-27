@@ -2,8 +2,8 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:        1.5.6
-Release:        4
+Version:        8.1.2
+Release:        1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
