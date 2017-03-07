@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:        8.1.2
+Version:        9.0.1
 Release:        1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
@@ -12,7 +12,7 @@ URL:            http://pypi.python.org/pypi/pip
 Source0:        http://pypi.python.org/packages/source/p/pip/pip-%{version}.tar.gz
 
 BuildArch:      noarch
- 
+
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python2-setuptools
 BuildRequires:  pkgconfig(python3)
