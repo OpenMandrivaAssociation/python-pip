@@ -3,7 +3,7 @@
 
 Name:           python-pip
 Version:        9.0.1
-Release:        1
+Release:        2
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
