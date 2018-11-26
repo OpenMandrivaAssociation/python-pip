@@ -2,8 +2,8 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:        9.0.1
-Release:        5
+Version:        18.1
+Release:        1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
@@ -18,6 +18,8 @@ BuildRequires:  python2-setuptools
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  python-setuptools
 
+Requires:       python2-setuptools
+Requires:       python2-pkg-resources
 Requires:       python-setuptools
 Requires:       python-pkg-resources
 %rename python3-pip
@@ -44,8 +46,8 @@ easy_installable should be pip-installable as well.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
-%apply_patches
-%{__sed} -i '1d' pip/__init__.py
+#%%apply_patches
+#%%{__sed} -i '1d' pip/__init__.py
 
 cp -a . %{py3dir}
 
