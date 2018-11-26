@@ -15,8 +15,10 @@ BuildArch:      noarch
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python2-setuptools
-BuildRequires:  pkgconfig(python3)
+BuildRequires:  pkgconfig(python2)
 BuildRequires:  python-setuptools
+BuildRequires:  python2-pkg-resources
+BuildRequires:  python-pkg-resources
 
 Requires:       python2-setuptools
 Requires:       python2-pkg-resources
