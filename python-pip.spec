@@ -20,8 +20,6 @@ BuildRequires:  python-setuptools
 BuildRequires:  python2-pkg-resources
 BuildRequires:  python-pkg-resources
 
-Requires:       python2-setuptools
-Requires:       python2-pkg-resources
 Requires:       python-setuptools
 Requires:       python-pkg-resources
 %rename python3-pip
@@ -34,6 +32,8 @@ easy_install_.
 %package -n python2-pip
 Summary:        A tool for installing and managing Python3 packages
 Group:          Development/Python
+Requires:       python2-setuptools
+Requires:       python2-pkg-resources
 
 Requires:	python2-setuptools
 
