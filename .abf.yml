@@ -1,4 +1,2 @@
-removed_sources:
-  pip-9.0.1.tar.gz: 57ff41e99cb01b6a1c2b0999161589b726f0ec8b
 sources:
-  pip-18.1.tar.gz: 1226368a8d39bd8b945517b6f7cb9802b279564e
+  pip-19.1.1.tar.gz: bf596e0f6e0fc2e6667aecf9442051f3ec6c9b25
