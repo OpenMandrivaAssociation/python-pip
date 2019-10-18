@@ -2,14 +2,14 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:	19.2.3
+Version:	19.3
 Release:	1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/pip
-Source0:	https://files.pythonhosted.org/packages/00/9e/4c83a0950d8bdec0b4ca72afd2f9cea92d08eb7c1a768363f2ea458d08b4/pip-19.2.3.tar.gz
+Source0:	https://files.pythonhosted.org/packages/af/7a/5dd1e6efc894613c432ce86f1011fcc3bbd8ac07dfeae6393b7b97f1de8b/pip-19.3.tar.gz
 
 BuildArch:      noarch
 
