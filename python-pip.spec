@@ -48,7 +48,7 @@ easy_installable should be pip-installable as well.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
-#%%apply_patches
+#%%autopatch -p1
 #%%{__sed} -i '1d' pip/__init__.py
 
 cp -a . %{py3dir}
