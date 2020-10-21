@@ -9,7 +9,7 @@ Summary:        pip installs packages. Python packages. An easy_install replacem
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/pip
-Source0:	https://files.pythonhosted.org/packages/59/64/4718738ffbc22d98b5223dbd6c5bb87c476d83a4c71719402935170064c7/pip-20.2.3.tar.gz
+Source0:	https://files.pythonhosted.org/packages/59/64/4718738ffbc22d98b5223dbd6c5bb87c476d83a4c71719402935170064c7/%{pypi_name}-%{version}.tar.gz
 
 BuildArch:      noarch
 
