@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:	20.2.3
+Version:	20.2.4
 Release:	1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
@@ -64,16 +64,16 @@ popd
 
 # The install process creates both pip and pip-<python_abiversion> that seem to
 # be the same. Since removing pip-* also clobbers pip-python3, just remove pip-2*
-pushd %{buildroot}%{_bindir}
+cd %{buildroot}%{_bindir}
 %{__rm} -rf pip2*
 
 # Change the name of the python2 pip executable in order to not conflict with
 # the python3 executable
 mv %{buildroot}%{_bindir}/pip %{buildroot}%{_bindir}/python2-pip
 
-popd
+cd ..
 
-pushd %{py3dir}
+cd %{py3dir}
 %{__python3} setup.py install --skip-build --root %{buildroot}
 
 # The install process creates both pip and pip-<python_abiversion> that seem to
@@ -81,7 +81,7 @@ pushd %{py3dir}
 pushd %{buildroot}%{_bindir}
 %{__rm} -rf pip3*
 
-popd
+cd ..
 
 %files
 %doc LICENSE.txt PKG-INFO docs
