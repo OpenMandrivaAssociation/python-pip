@@ -2,14 +2,14 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:	21.0
+Version:	21.0.1
 Release:	1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
 
 License:        MIT
 URL:            http://pypi.python.org/pypi/pip
-Source0:	https://files.pythonhosted.org/packages/9e/24/bc928987f35dd0167f21b13a1777c21b9c5917c9894cff93f1c1a6cb8f3b/pip-21.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -28,6 +28,9 @@ Requires:       python-pkg-resources
 `pip` is a tool for installing and managing Python packages, such as
 those found in the `Python Package Index`_. It's a replacement for
 easy_install_.
+
+It is strongly recommended to install the corresponding rpm packages
+instead of installing packages with pip.
 
 %package -n python2-pip
 Summary:        A tool for installing and managing Python3 packages
