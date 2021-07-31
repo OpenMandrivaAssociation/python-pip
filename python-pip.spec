@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:	21.0.1
+Version:	21.2.2
 Release:	1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
@@ -14,10 +14,7 @@ Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar
 BuildArch:      noarch
 
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python2-setuptools
-BuildRequires:  pkgconfig(python2)
 BuildRequires:  python-setuptools
-BuildRequires:  python2-pkg-resources
 BuildRequires:  python-pkg-resources
 
 Requires:       python-setuptools
@@ -32,66 +29,16 @@ easy_install_.
 It is strongly recommended to install the corresponding rpm packages
 instead of installing packages with pip.
 
-%package -n python2-pip
-Summary:        A tool for installing and managing Python3 packages
-Group:          Development/Python
-Requires:       python2-setuptools
-Requires:       python2-pkg-resources
-
-Requires:	python2-setuptools
-
-%description -n python2-pip
-Pip is a replacement for `easy_install
-<http://peak.telecommunity.com/DevCenter/EasyInstall>`_.  It uses mostly the
-same techniques for finding packages, so packages that were made
-easy_installable should be pip-installable as well.
-
 %prep
 %setup -q -n %{pypi_name}-%{version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
-
-#%%autopatch -p1
-#%%{__sed} -i '1d' pip/__init__.py
-
-cp -a . %{py3dir}
 
 %build
-%{__python2} setup.py build
-pushd %{py3dir}
 %{__python3} setup.py build
-popd
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
-
-# The install process creates both pip and pip-<python_abiversion> that seem to
-# be the same. Since removing pip-* also clobbers pip-python3, just remove pip-2*
-cd %{buildroot}%{_bindir}
-%{__rm} -rf pip2*
-
-# Change the name of the python2 pip executable in order to not conflict with
-# the python3 executable
-mv %{buildroot}%{_bindir}/pip %{buildroot}%{_bindir}/python2-pip
-
-cd ..
-
-cd %{py3dir}
 %{__python3} setup.py install --skip-build --root %{buildroot}
-
-# The install process creates both pip and pip-<python_abiversion> that seem to
-# be the same. Remove the extra script
-pushd %{buildroot}%{_bindir}
-%{__rm} -rf pip3*
-
-cd ..
 
 %files
 %doc LICENSE.txt PKG-INFO docs
-%attr(755,root,root) %{_bindir}/pip
+%attr(755,root,root) %{_bindir}/pip*
 %{py3_puresitedir}/pip*
-
-%files -n python2-pip
-%doc LICENSE.txt PKG-INFO docs
-%attr(755,root,root) %{_bindir}/python2-pip
-%{py2_puresitedir}/pip*
