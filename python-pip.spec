@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:           python-pip
-Version:	21.2.2
+Version:	21.2.3
 Release:	1
 Group:          Development/Python
 Summary:        pip installs packages. Python packages. An easy_install replacement
