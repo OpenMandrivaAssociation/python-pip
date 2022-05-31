@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:		python-pip
-Version:	22.1
+Version:	22.1.2
 Release:	1
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
@@ -11,6 +11,7 @@ URL:		http://pypi.python.org/pypi/pip
 Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
+BuildRequires:	python3dist(tomli)
 BuildRequires:	python-setuptools
 BuildRequires:	python-pkg-resources
 
