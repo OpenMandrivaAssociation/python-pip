@@ -2,13 +2,14 @@
 %define pypi_name pip
 
 Name:		python-pip
-Version:	22.1.2
+Version:	22.2.2
 Release:	1
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
 URL:		http://pypi.python.org/pypi/pip
 Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar.gz
+Patch0:		pip-22.2.2-workaround-crash.patch
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python3dist(tomli)
@@ -28,7 +29,7 @@ It is strongly recommended to install the corresponding rpm packages
 instead of installing packages with pip.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -p1 -n %{pypi_name}-%{version}
 
 %build
 %py_build

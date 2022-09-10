@@ -1,0 +1,15 @@
+diff -up pip-22.2.2/src/pip/_vendor/packaging/utils.py.omv~ pip-22.2.2/src/pip/_vendor/packaging/utils.py
+--- pip-22.2.2/src/pip/_vendor/packaging/utils.py.omv~	2022-09-10 13:56:59.839741283 +0200
++++ pip-22.2.2/src/pip/_vendor/packaging/utils.py	2022-09-10 13:57:32.933123786 +0200
+@@ -31,7 +31,10 @@ _build_tag_regex = re.compile(r"(\d+)(.*
+ 
+ def canonicalize_name(name: str) -> NormalizedName:
+     # This is taken from PEP 503.
+-    value = _canonicalize_regex.sub("-", name).lower()
++    if name:
++        value = _canonicalize_regex.sub("-", name).lower()
++    else:
++        value = ""
+     return cast(NormalizedName, value)
+ 
+ 
