@@ -3,7 +3,7 @@
 
 Name:		python-pip
 Version:	22.2.2
-Release:	1
+Release:	2
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
@@ -12,12 +12,16 @@ Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar
 Patch0:		pip-22.2.2-workaround-crash.patch
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(tomli)
+BuildRequires:	python%{pyver}dist(tomli)
 BuildRequires:	python-setuptools
 BuildRequires:	python-pkg-resources
 
 Requires:	python-setuptools
 Requires:	python-pkg-resources
+
+Requires:	python-wheel
+Requires:	python%{pyver}dist(flit-core)
+
 %rename python3-pip
 
 %description
