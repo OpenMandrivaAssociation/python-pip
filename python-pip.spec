@@ -22,6 +22,12 @@ Requires:	python-pkg-resources
 Requires:	python-wheel
 Requires:	python%{pyver}dist(flit-core)
 
+# FIXME this is just because py_build uses pip
+# Got to fall back to setup.py for bootstrapping
+BuildRequires:	python-pip
+BuildRequires:	python-wheel
+BuildRequires:	python%{pyver}dist(flit-core)
+
 %rename python3-pip
 
 %description
