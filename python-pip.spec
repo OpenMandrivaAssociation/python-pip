@@ -7,7 +7,7 @@ Release:	1
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
-URL:		http://pypi.python.org/pypi/pip
+URL:		https://pypi.python.org/pypi/pip
 Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar.gz
 #Patch0:		pip-22.2.2-workaround-crash.patch
 BuildArch:	noarch
