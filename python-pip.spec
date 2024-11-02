@@ -2,7 +2,7 @@
 %define pypi_name pip
 
 Name:		python-pip
-Version:	24.2
+Version:	24.3.1
 Release:	1
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
