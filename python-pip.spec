@@ -2,7 +2,7 @@
 
 Name:		python-pip
 Version:	25.3
-Release:	1
+Release:	2
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
@@ -11,10 +11,12 @@ Source0:	https://files.pythonhosted.org/packages/source/p/pip/pip-%{version}.tar
 #Patch0:		pip-22.2.2-workaround-crash.patch
 BuildArch:	noarch
 # We're not using declarative build features here because declarative uses
-# pip to build -- but we can't depend on ourselves
+# pip to build -- but we can't depend on a preexisting version of ourselves.
+# We'll run pip from inside the source tree instead.
 BuildRequires:	python
 BuildRequires:	python%{pyver}dist(flit-core)
 BuildRequires:	python%{pyver}dist(packaging)
+Requires:	python%{pyver}dist(packaging)
 
 # This "obsoletes without provides" is intentional.
 # We want to obsolete python-pip-bootstrap because
