@@ -2,7 +2,7 @@
 
 Name:		python-pip
 Version:	25.3
-Release:	2
+Release:	3
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
@@ -17,6 +17,7 @@ BuildRequires:	python
 BuildRequires:	python%{pyver}dist(flit-core)
 BuildRequires:	python%{pyver}dist(packaging)
 Requires:	python%{pyver}dist(packaging)
+Requires:	python%{pyver}dist(flit-core)
 
 # This "obsoletes without provides" is intentional.
 # We want to obsolete python-pip-bootstrap because
