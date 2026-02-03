@@ -1,8 +1,8 @@
 %define pypi_name pip
 
 Name:		python-pip
-Version:	25.3
-Release:	3
+Version:	26.0
+Release:	1
 Group:		Development/Python
 Summary:	pip installs packages. Python packages. An easy_install replacement
 License:	MIT
