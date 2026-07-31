@@ -2,7 +2,7 @@
 
 Name:		python-pip
 Summary:	pip installs packages. Python packages. An easy_install replacement
-Version:	26.1.2
+Version:	26.2
 Release:	1
 Group:		Development/Python
 License:	MIT
@@ -39,7 +39,7 @@ It is strongly recommended to install the corresponding rpm packages
 instead of installing packages with pip.
 
 %prep
-%autosetup -p1 -n pip-%{version}
+%autosetup -p1 -n pip-26.2
 
 %build
 export PYTHONPATH=$(pwd)/src
