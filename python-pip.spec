@@ -2,7 +2,7 @@
 
 Name:		python-pip
 Summary:	pip installs packages. Python packages. An easy_install replacement
-Version:	26.2.2
+Version:	26.3
 Release:	1
 Group:		Development/Python
 License:	MIT
